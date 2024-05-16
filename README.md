@@ -1,2 +1,1 @@
-# mostFrequentNumber
-arraypractice cpp most frequent number in an arary
+# List of array practice problems in c++
