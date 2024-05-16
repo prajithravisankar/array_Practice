@@ -7,7 +7,7 @@ int main() {
     // IDEA: to find the number of increasing sub arrays for a given array,
     // keep a side track of a counter where, if a current number is > than previous number
     // count++ and add count to the number of items in the array (size of the array). If the
-    // current number in the iteration is less than the previous number, count--. Keep iterating
+    // current number in the iteration is less than the previous number, count = 1. Keep iterating
     // through the array, and we will have the number of increasing sub arrays.
 
     cout << "enter N < 200: ";
@@ -21,16 +21,14 @@ int main() {
     }
 
     int sum = N;
-    int cnt = 0; // counter
+    int cnt = 1;
     for (int i = 1; i < N; i++) {
         if (arr[i] > arr[i - 1]) {
-            // if current number is greater than previous number
-            cnt++;
             sum += cnt;
+            cnt++;
         }
         else if (arr[i] < arr[i - 1]) {
-            // if current number is less than previous number
-            cnt--;
+            cnt = 1;
         }
     }
 
